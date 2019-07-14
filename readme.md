@@ -14,8 +14,8 @@ Petclinic is a [Spring Boot](https://spring.io/guides/gs/spring-boot) applicatio
 ```
 git clone https://github.com/spring-projects/spring-petclinic.git
 cd spring-petclinic
-./mvnw package
-java -jar target/*.jar
+mvn clean package
+java -jar -Dspring.profiles.active=mysql target/*.jar --spring.datasource.url=jdbc:mysql://<MySQLホスト名>:3306/petclinic
 ```
 
 You can then access petclinic here: http://localhost:8080/
