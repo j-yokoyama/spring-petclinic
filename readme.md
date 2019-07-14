@@ -15,7 +15,7 @@ Petclinic is a [Spring Boot](https://spring.io/guides/gs/spring-boot) applicatio
 git clone https://github.com/spring-projects/spring-petclinic.git
 cd spring-petclinic
 mvn clean package
-java -jar -Dspring.profiles.active=mysql target/*.jar --spring.datasource.url=jdbc:mysql://<MySQLホスト名>:3306/petclinic
+java -jar -Dspring.profiles.active=mysql target/spring-petclinic-2.1.0.BUILD-SNAPSHOT.jar --spring.datasource.url=jdbc:mysql://<MySQLホスト名>:3306/petclinic
 ```
 
 You can then access petclinic here: http://localhost:8080/
@@ -38,11 +38,9 @@ In its default configuration, Petclinic uses an in-memory database (HSQLDB) whic
 gets populated at startup with data. A similar setup is provided for MySql in case a persistent database configuration is needed.
 Note that whenever the database type is changed, the app needs to be run with a different profile: `spring.profiles.active=mysql` for MySql.
 
-You could start MySql locally with whatever installer works for your OS, or with docker:
+There are sample sql in "spring-petclinic/src/main/resources/db/" folder.
 
-```
-docker run -e MYSQL_ROOT_PASSWORD=petclinic -e MYSQL_DATABASE=petclinic -p 3306:3306 mysql:5.7.8
-```
+If you use mysql docker images, select the "5.7.8" tag.
 
 Further documentation is provided [here](https://github.com/spring-projects/spring-petclinic/blob/master/src/main/resources/db/mysql/petclinic_db_setup_mysql.txt).
 
